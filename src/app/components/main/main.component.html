@@ -1,0 +1,57 @@
+  <form class="container" [formGroup]='formulario' (submit)="submit()">
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+          <label style="color:#34cdd2" for="formGroupExampleInput">* Name</label>
+          <input type="text" class="form-control condensed" [ngClass]="aplicaCssErro('nome')" placeholder="User Name" id="nome" formControlName="nome">
+          <label *ngIf="verificaValidTouched('nome')" class="invalid-feedback">Nome está vazio</label>
+        </div>
+    </div>
+    </div>
+    <button class="btn blue" type="submit">Search</button>
+  </form >
+  <br>
+  <div *ngIf="retornou" class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{{formulario.value.avatar}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> <fa-icon [icon]="faUser"></fa-icon> {{formulario.value.nome}}</h5>
+            <p class="card-text">{{formulario.value.bio}}</p>
+          </div>
+        </div>
+      </div>
+        <div class="col flex" >
+          <div class="card-custom" *ngFor="let repo of listaRepo | slice:0:4; let i=index">
+            <div class="card-body">
+              <h5 class="card-title">{{repo.name}}</h5>
+              <p class="card-text" *ngIf="repo.description == null" >No Description</p>
+              <p class="card-text">{{repo.description | slice:0:55}}</p>
+              <fa-icon [icon]="faStar"></fa-icon> {{repo.watchers_count}}<fa-icon [icon]="faCodeBranch" style="margin-left:12px;"></fa-icon> {{repo.forks_count}}
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-4" style="color:#34cdd2">
+        <div class="row container">
+        <div class="col">
+          <fa-icon [icon]="faUsers"></fa-icon>
+        </div>
+        <div class="col condensed" align="left">
+          Followers: {{formulario.value.followers}}
+        </div>
+        </div>
+        <div class="row container">
+          <div class="col">
+            <fa-icon [icon]="faBook"></fa-icon>
+          </div>
+          <div class="col condensed" align="left">
+            Repositories: {{formulario.value.repos}}
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>

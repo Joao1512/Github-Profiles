@@ -1,4 +1,5 @@
 # GitHubProfiles
+In this project was created a search app that uses GitHub API to retrieve user information when a valid username is input. It displays avatar, username, followers count, repository count, 4 repositories and nuber of forks and stars.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
