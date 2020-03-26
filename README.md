@@ -1,5 +1,5 @@
 # GithubProfiles
-In this project was created a search app that uses GitHub API to retrieve user information when a valid username is input. It displays avatar, username, followers count, repository count, 4 repositories and nuber of forks and stars.
+In this project was created a search app that uses GitHub API to retrieve user information when a valid username is input. It displays avatar, username, followers count, repository count, 4 repositories and number of forks and stars.
 
 ![Sem título](https://user-images.githubusercontent.com/43080476/77605258-3f84d680-6ef3-11ea-9aa3-e459a6f762ed.png)
 
